@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clicklistener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.smallcake.guess.ui.VideoInfoActivity">
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/common_action_bar" />
+        <VideoView
+            android:layout_below="@id/include3"
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+        <Button
+            android:layout_below="@+id/video_view"
+            android:onClick="@{clicklistener}"
+            android:id="@+id/btn_full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全屏"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/video_view" />
+
+        <Button
+            android:onClick="@{clicklistener}"
+            android:id="@+id/btn_little_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/video_view"
+            android:layout_toEndOf="@+id/btn_full_screen"
+            android:layout_toRightOf="@+id/btn_full_screen"
+            android:text="小窗口" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btn_little_screen"
+            android:layout_alignBottom="@+id/btn_little_screen"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@+id/btn_little_screen"
+            android:layout_toRightOf="@+id/btn_little_screen"
+            android:gravity="center"
+            android:text="时间" />
+
+        <Button
+            android:onClick="@{clicklistener}"
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/video_view"
+            android:layout_alignParentRight="true"
+            android:text="暂停" />
+
+    </RelativeLayout>
+</layout>
