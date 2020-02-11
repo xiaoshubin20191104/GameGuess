@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="o">
-        <activity android:name=".ui.VideoInfoActivity"></activity>
+        <activity android:name=".ui.VideoInfoActivity" android:configChanges="orientation|screenSize|keyboardHidden"/>
         <activity
             android:name=".ui.InfomationDetailsActivity"
             android:screenOrientation="portrait" />

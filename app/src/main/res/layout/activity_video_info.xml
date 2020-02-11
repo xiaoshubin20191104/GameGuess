@@ -47,28 +47,45 @@
             android:text="小窗口" />
 
         <TextView
+            android:layout_below="@+id/btn_full_screen"
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/btn_little_screen"
-            android:layout_alignBottom="@+id/btn_little_screen"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="-2dp"
-            android:layout_toEndOf="@+id/btn_little_screen"
-            android:layout_toRightOf="@+id/btn_little_screen"
             android:gravity="center"
             android:text="时间" />
 
         <Button
             android:onClick="@{clicklistener}"
-            android:id="@+id/btn_stop"
+            android:id="@+id/btn_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/video_view"
             android:layout_alignParentRight="true"
             android:text="暂停" />
+
+        <Button
+            android:onClick="@{clicklistener}"
+            android:layout_below="@+id/video_view"
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/btn_pause"
+            android:layout_toLeftOf="@+id/btn_pause"
+            android:text="播放" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:max="10"
+            android:progress="0" />
+
+
 
     </RelativeLayout>
 </layout>
